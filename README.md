@@ -20,6 +20,7 @@ And add this line to your Jekyll site's `_config.yml`:
 ```yaml
 theme: publikator-boombox
 ```
+TODO: fix logos and  add theme gem and config
 
 And then execute:
 
