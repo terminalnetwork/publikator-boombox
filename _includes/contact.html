@@ -1,0 +1,47 @@
+<!-- BEGIN contact.html -->
+<section id="contact">
+  <div>
+    <form action="{{ relBase }}/contact-success/" method="post" class="contact-form">
+      <div>
+        <h2>Kontakta oss!</h2>
+        <input type="hidden" name="_to" value="{{ site.publisher.mail }}" /><br />
+        <input type="text" name="_gotcha" style="display: none;" />
+      </div>
+      <div class="contact-info">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Email..." required class="contact" />
+        {% if page.url == '/fr-fretag/' %}
+        <label for="phone">Phone</label>
+        <input type="tel" name="telephone" id="telephone" placeholder="Telefonnumer..." required
+          class="contact" />
+        <label for="name">Name</label>
+        <input type="name" name="name" id="name" placeholder="Namn och efternamn..." required class="contact" />
+        <label for="company">Företag</label>
+        <input type="company" name="company" id="company" placeholder="Företag..." required
+          class="contact" />
+        {% endif %}
+      </div>
+      <div>
+        <label for="message">Meddelande</label><br />
+        <textarea name="message" id="message" placeholder="Skriv ditt meddelande här..." required
+          class="contact textspace"></textarea>
+      </div>
+      <br />
+      <div>
+        <input type="checkbox" name="consent" id="consent" required class="css-checkbox lrg klaus" /><label
+          for="consent" class="css-label lrg klaus">Jag godkänner <a href="/cookies/">integritets policyn</a>
+        </label>
+      </div>
+      <br />
+      <div>
+        <input type="checkbox" name="news" id="news" class="css-checkbox lrg klaus" /><label for="news"
+          class="css-label lrg klaus">Jag vill ha nyheter</label>
+      </div>
+      <br />
+      <div>
+        <input type="submit" class="button" value="Send Message" />
+      </div>
+    </form>
+  </div>
+</section>
+<!-- END contact.html -->

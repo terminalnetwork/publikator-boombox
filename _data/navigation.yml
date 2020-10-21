@@ -1,0 +1,26 @@
+## Usefull for editing navigation and footer links. Leave as is, unless you rename the files of the pages that
+## come with the template. If you want to link to an external site in the navigation menu, you may chose to set
+## `external_site` to `true`, that way the link will open in a new tab/window (`target="_blank"` and 
+## `rel="noopener"`) Icons are emoticons, because it's cool like a kangaroo pet
+
+- icon: 💽
+  url: /discography/
+  name: Discog
+  external_site: false
+- icon: 📰
+  url: /log/
+  name: Log
+  external_site: false
+- icon: 🐿
+  url: /about/
+  name: About
+  external_site: false
+- icon: 🔗
+  url: /links/
+  name: Links
+  external_site: false
+- icon: 📢
+  url: /chat/
+  name: Chat
+  external_site: false
+  

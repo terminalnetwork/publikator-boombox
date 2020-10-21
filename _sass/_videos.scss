@@ -1,0 +1,33 @@
+/* Background Video */
+.fullscreen-bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 0;
+  background: var(--bg);
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+
+}
+
+.fullscreen-bg__video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+
+}
+#myVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  
+}

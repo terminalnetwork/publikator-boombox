@@ -1,0 +1,162 @@
+title : Band Name of the Century
+description: 'Dance like no kangaroo is watching'
+
+url: "https://example.com" # the base hostname & protocol for your site
+permalink: /:categories/:title/
+
+## jekyll excludes
+exclude:
+  - changelog.md
+  - '*.*~'
+  - '*.xcf'
+  - '*.blend*'
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENCE
+## SEO paramters, adapt to your needs
+
+lang: en # Set the language of your website. This is a specific value. Look it up here: https://www.w3.org/International/questions/qa-html-language-declarations#attributes
+geo: 
+  timezone: "Europe/Switzerland" # this is pretty specific this is a helpfull tool: https://www.geo-tag.de/generator/en.html
+  lat: '46.203918'
+  long: '6.133011'
+  region: 'CH-GE'
+  town: 'Geneva'
+  country: 'Switzerland'
+  postalcode: '1201'
+#### different logos used across the page
+banner:   /assets/img/setto-logo.svg
+banner-vert: /images/setto_logo.svg
+icon:   /images/setto-logoicon.svg
+logo:   /images/setto-logo.svg
+logo-footer: /images/setto-logo-dark.svg
+
+# are you the publisher? or do you have a publisher? enter the correct value here. It will reflect in the RSS 
+# and on the cookies disclaimer page.
+publisher: # nothing on this line
+  name: Kangaroo LTD
+  domain: kangaroo.example
+  mail: info@kangaroo.example
+## social links about you. I know, you already entered it above, but this is here for a different reason
+social: # nothing on this line
+  name: To Setto Setto
+  mail: setto@kangaroo.example
+  links:
+    - https://mastodon.art/@bandnameofthecentury
+    - https://pixfed.com/bandnameofthecentury
+  ## usernames of twitter and telegram without `@`. This reflects on the share buttons of your posts
+  usernames:
+    twitter: bandnameofthecentury
+    telegram: bnoc
+  hashtag: kangaroo #don't add the actual `#`
+  # you can fill this out if you have IRC and matrix. IF don't use those, you should probably remove the file
+  # `chat.html` from the root of this jekyll directory
+  irc: 
+    channel: '##BNOC'
+    guest-nick: anon
+    matrix: https://matrix.to/#/!bnoc:matrix.org?via=matrix.org
+## where is your media stored? (the images and audiofiles that have been output by publikator. Unless they are 
+## hosted somehwere else you can mostlikely leave it as is)
+mediaurl: /assets/albums/
+
+# defaults you shouldn't have to worry about things bellow this line.
+categories:
+  - releases
+  - ramblings
+tags: 
+  - LP
+  - EP
+  - Single
+
+collections:
+  albums:
+    output: false
+    permalink: /albums/:name/
+    _disable_add: true
+  tracks:
+    output: true
+    permalink: /:path/
+    sort_by: common.year
+    _disable_add: true
+  authors:
+    output: false
+
+sass:
+  sass_dir: _sass
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      lang: en  
+  - scope:
+      path: ""
+      type: "tracks"
+    values:
+      layout: "track"
+      lang: en
+      seo:
+        type: "AudioObject"
+      _unlisted: true
+  - scope:
+      path: ""
+      type: "albums"
+    values:
+      layout: "album"
+      lang: en
+      seo:
+        type: "AudioObject"
+      _unlisted: true
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+      lang: en
+      _options:
+        image:
+          width: 1024
+          height: 720
+          resize_style: cover
+          uploads_dir: "/images/pages"
+        content:
+          width: 720
+          height: 720
+          resize_style: cover
+          uploads_dir: "/images/pages"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      lang: en
+      permalink: /:title/
+      _options:
+        image:
+          width: 1024
+          height: 720
+          resize_style: cover
+          uploads_dir: "/images/posts"
+        content:
+          width: 720
+          height: 720
+          resize_style: cover
+          uploads_dir: "/images/posts"  
+        video_path:
+          uploads_dir: "/videos"
+
+
+### Cloud Cannon Settings
+
+_explore:
+  groups:
+    - heading: Content
+      collections:
+        - posts
+        - drafts
+        - pages
+    - heading: Other
+      collections:
+        - data
+        - authors

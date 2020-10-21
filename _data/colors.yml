@@ -1,0 +1,25 @@
+## Here you can set all the colors in use. Names should be pretty self explanatory. Changing colors here will
+## will apply them sitewide. This file is particularily useful if you are using Cloudcannon.com as it will 
+## transform into a WYSIWYG color picker from their editor interface. They are in RGBA format
+## read about RGBA here: https://www.w3schools.com/Css/css_colors_rgb.asp
+
+# Background color
+bg_rgba: 'rgb(60, 42, 82)'
+# Transparent version of background color
+bg-alt_rgba: 'rgba(60, 42, 82, 0.75)'
+# Forground color
+fg_rgba: 'rgb(235, 219, 248)'
+# Transparent version of forground color
+fg-alt_rgba: 'rgba(235, 219, 248, 0.25)'
+# Border color
+border_rgba: 'rgb(0, 0, 0)'
+# Transparent version of border color
+border-alt_rgba: 'rgba(0, 0, 0, 0.75)'
+# First accent color
+accent1_rgba: 'rgb(56, 255, 89)'
+# Transparent version of first accent color
+accent1-alt_rgba: 'rgba(56, 255, 89, 0.75)'
+# Second accent color
+accent2_rgba: 'rgb(141, 62, 216)'
+# Transparent version of second accent color
+accent2-alt_rgba: 'rgba(141, 62, 216, 0.75)'

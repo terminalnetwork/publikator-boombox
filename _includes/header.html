@@ -1,0 +1,36 @@
+{% include relBase.html %}
+<header class="hero" style="background-image: url({{ relBase }}{{ page.image }});">
+  <div class="imagecontainer">
+    <h4>{{ page.title }}</h4>
+  </div>
+  <div class="splash">
+    <div class="splash-logo">
+      {% if page.category == 'releases' %}
+      <a href="#play"><img src="{{ site.icon }}" width="240px" alt="{{ site.title }} Logo" /></a>
+      {% else %}
+      <a href="#read"><img src="{{ site.icon }}" width="240px" alt="{{ site.title }} Logo" /></a>
+      {% endif %}
+      
+    </div>
+    <div class="description">
+  
+      <h1>{{ page.title }}</h1>
+      <p>{{ page.description }}</p>
+      {% if page.category == 'releases' %}
+      <p><a href="#play" class="button">🔊 Listen</a></p>
+      {% elsif page.category == 'ramblings' %}
+      <p><a href="#read" class="button">👀 Read</a></p>
+      {% elsif page.url == '/404/' %}
+      <p><a href="/" class="button">🏡 Take me home</a></p>
+      {% elsif page.url == '/about/' %}
+      <p><a href="#read" class="button">👽 Saywhat?</a></p>
+      {% else %}
+      <p><a href="#read" class="button">🔥 Boom</a></p>
+      {% endif %}
+    </div>
+  </div>
+ 
+
+
+
+</header>

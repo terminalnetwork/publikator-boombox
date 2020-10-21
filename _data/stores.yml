@@ -1,0 +1,13 @@
+## If you publish your music to streaming stores you might want to add those stores here. These are the links
+## to the main profile. You can set specific release pages in posts. Downloading services are treated 
+## differently from streaming services. icon is leverage from fontawesome. Look for the icon of your service 
+## here: https://fontawesome.com/
+
+- name: Bandcamp
+  url: https://shop.basspistol.com
+  icon: fa-bandcamp
+  download: true
+- name: Spotify
+  url: https://open.spotify.com/artist/0gus2IdSkfrvFDBPqeiksM/
+  icon: fa-spotify
+  download: false

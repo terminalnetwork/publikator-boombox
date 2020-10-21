@@ -1,0 +1,132 @@
+---
+layout: nil
+---
+<!DOCTYPE HTML>
+<!--
+  Publikatorized by Sakrecoer
+  Free for personal and commercial use under the CCA 3.0 license
+-->
+<html lang="{{ site.lang }}">
+<head>
+{% include seo.html %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
+<link rel="stylesheet" href="/assets/css/all.min.css" />
+<link rel="stylesheet" href="/assets/css/colors-20200911.css" />
+<link rel="stylesheet" href="/assets/css/main-20200911.css" />
+<link rel="apple-touch-icon" href="{{ site.url }}/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="{{ site.url }}/touch-icon.png" sizes="192x192">
+<link rel="shortcut icon" href="{{ site.url }}{{ site.icon }}" type="image/png" />
+<noscript><link rel="stylesheet" href="/assets/css/noscripts-20200911.css" /></noscript>
+
+<meta name="theme-color" content="{{ site.data.colors.bg }}"/>
+
+
+
+</head>
+
+<body>
+<!-- Wrapper -->
+
+<div id="main-wrapper">
+
+
+  <header class="hero" style="background-image: url({{ page.image }});">
+    <div class="imagecontainer">
+      <h4>{{ page.title }}</h4>
+    </div>
+    <div class="splash">
+      <div class="splash-logo">
+        {% if page.category == 'releases' or page.category == 'highlights' %}
+  
+        {% else %}
+        <a href="#read"><img src="{{ site.icon }}" width="240px" alt="{{ site.title }} Logo" /></a>
+        {% endif %}
+        
+      </div>
+      <div class="description">
+    
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.description }}</p>
+        {% if page.category == 'releases' %}
+        <p><a href="#play" class="button">🔊 Listen</a></p>
+        {% elsif page.category == 'highlights' %}
+        <p><a href="#read" class="button">👀 Read</a></p>
+        {% elsif page.url == '/404/' %}
+        <p><a href="/" class="button">🏡 Take me home</a></p>
+        {% elsif page.url == '/about/' %}
+        <p><a href="#read" class="button">👽 Saywhat?</a></p>
+        {% else %}
+        <p><a href="#read" class="button">🔥 Boom</a></p>
+        {% endif %}
+      </div>
+    </div>
+   
+  
+  
+  
+  </header>
+  
+  <section class="info" id="read">
+    <div class="info-pages">
+      {{ content }}
+    </div>
+  </section>
+  
+<!-- Footer -->
+{% unless page.collection == 'tracks' or page.url == '/radio/' %}
+<!-- Footer -->
+<footer>
+  <div class="footframe">
+    <div>
+      <h3>{{ site.title }}</h3>
+      <p>{{ site.description }}</p>
+      <ul>
+        {% if page.url != '/' %}
+        <li><a href="/">🏡 Home</a></li>
+        {% endif %}
+        {% for entry in site.data.navigation %}
+        <li><a href="{{ entry.url }}" {% if entry.external_site == true %} target="_blank" rel="noopener"
+            {% endif %}>{{ entry.icon }} {{ entry.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div><a href="#main-wrapper"><img src="{{ site.icon }}" alt="{{ site.title }} Logo" /></a></div>
+
+    <small>
+      <div style="text-align: center;">
+        {% for nw in site.data.social %}
+        <a target="_blank" alt="{{ site.title }} on {{ nw.name }}" title="{{ site.title }} on {{ nw.name }}" rel="{% if nw.url contains 'mastodon.art' %}me {% endif %}noopener"
+          href="{{ nw.url }}" class="icon small fab {{ nw.icon }}"><span class="label">{{ nw.name }}</span></a>
+        {% endfor %}
+        <a target="_blank" alt="email" title="email" href="mailto:{{ site.social.mail }}" class="icon small fas fa-envelope-open-text"><span
+          class="label">Email</span></a>
+      </div>
+      <p>&copy;{{ site.time | date: '%Y' }} {{ site.publisher.name }} | <a href="/webcreds/">Credits</a> |
+        <a href="/cookies/">Cookies & Privacy</a>
+        <br />This page was last updated on {{ page.last_modified_at | date: "%A, %b %d, %Y" }}</p>
+    </small>
+  </div>
+</footer>
+{% endunless %}
+
+<!-- END Footer -->
+
+
+</div>
+<!-- END Wrapper -->
+{% unless page.collection == 'tracks' %}
+{% include navigation.html %}
+{% endunless %}
+{% include scripts.html %}
+{% if page.video_path %}
+<div class="fullscreen-bg">
+<video data-matomo-title="{{ page.title }} VideoBG" autoplay muted loop poster="{{ page.image }}" class="fullscreen-bg__video">
+  <source src="{{ page.video_path }}" type="video/mp4">
+</video>
+</div>
+{% endif %}
+</body>
+</html>
+

@@ -1,0 +1,92 @@
+---
+title: Kangaroos love Band name of the century
+description: >-
+  The music of Band name of the century is cool like kangaroos
+image: /images/posts/Screenshot_20200918_112312.jpg
+video_path: /assets/vid/pingnu.mp4
+---
+{% include relBase.html %}
+<header class="hero" id="top"
+  style="background-image: url({{ page.image }});">
+  <div class="imagecontainer">
+    <h4>{{ page.title }}</h4>
+  </div>
+
+    <div class="splash">
+      <div class="splash-logo">
+        <a href="#read"><img src="{{ site.icon }}" width="240px" alt="{{ site.title }} Logo" /></a>
+      </div>
+      <div class="description">
+    
+        <h1>{{ site.title }}</h1>
+        <p>{{ page.description }}</p>
+        <p><a href="#read" class="button">🔥 Boom</a></p>
+      </div>
+    </div>
+
+
+</header>
+
+{% for post in site.posts limit: 3 %}
+{% if post.category == 'ramblings' %}
+<section id="read" class="front-section">
+
+  <div style="background-image:url({{ post.image }})">
+    <p class="editor-link"><a href="cloudcannon:collections/_posts/{{ post.path }}" rel="nofollow"
+        class="btn"><strong>&#9998;</strong> Edit Post</a></p>
+  </div>
+  <div class="description">
+    <div class="container">
+      <div class="">
+        <h3>{{ post.title }}</h3>
+        {{ post.description  }}
+      </div>
+     
+      <div>
+        <p><a class="button" href="{{ relBase }}{{ post.url }}#read">📰 Read Highlight</a></p>
+      </div>
+  
+    </div>
+  </div>
+
+</section>
+{% endif %}
+{% endfor %}
+
+
+<section class="releases">
+  <h2>Releases</h2>
+  <div class="container">
+  {% assign sorted = site.albums | sort: 'date' | reverse %}
+  {% for album in sorted %}
+  {% for post in site.posts %}
+  {% if album.slug == post.album %}
+
+  <article>
+    <figure>
+      <a href="{{ post.url }}#play">
+        <img src="{{ site.mediaurl }}/{{ album.tracks[0].slug }}.jpeg" alt="Cover art for {{ post.title }}" /></a>
+      <figcaption>
+        <strong>{{ album.name }}</strong><br />
+
+        {% assign total = 0 %}
+        {% for track in album.tracks %}
+          {% assign total = total | plus: track.format.duration %}
+        {% endfor %}
+    
+
+        {% assign round_seconds = total | round %}{% assign minutes = round_seconds | divided_by: 60 %}{% assign leftover_seconds = minutes | times: 60 %}{{ minutes }}:{% assign seconds_without_zero = round_seconds | minus: leftover_seconds %}{% if seconds_without_zero < 10 %}0{% endif %}{{ seconds_without_zero }}
+
+<br />
+
+
+        {{ album.date | date: '%Y' }}
+      </figcaption>
+    </figure>
+  </article>
+
+  {% endif %}
+  {% endfor %}
+  {% endfor %}
+</div>
+</section>

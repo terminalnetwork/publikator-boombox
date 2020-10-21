@@ -1,0 +1,16 @@
+---
+layout: nil
+---
+:root {
+--bg: {{ site.data.colors.bg_rgba }};
+--bg-alt: {{ site.data.colors.bg-alt_rgba }};
+--fg: {{ site.data.colors.fg_rgba }};
+--fg-alt: {{ site.data.colors.fg-alt_rgba }};
+--border: {{ site.data.colors.border_rgba }};
+--border-alt: {{ site.data.colors.border-alt_rgba }};
+--accent1: {{ site.data.colors.accent1_rgba }};
+--accent1-alt: {{ site.data.colors.accent1-alt_rgba }};
+--accent2: {{ site.data.colors.accent2_rgba }};
+--accent2-alt: {{ site.data.colors.accent2-alt_rgba }};
+
+}

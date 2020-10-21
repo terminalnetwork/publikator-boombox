@@ -1,0 +1,27 @@
+---
+title: Discography
+description: Collection of music releases published by Band name of the century
+video_path: /assets/vid/pingu.mp4
+image: /images/pages/jack-hamilton-CMnNiQBkwBI-unsplash.jpg
+---
+
+{% include relBase.html %}
+{% include header.html %}
+
+{% assign sorted = site.posts | sort: 'date' | reverse %}
+{% for post in sorted %}
+{% if post.category == 'releases' %}
+<section id="read" class="news" style="margin:0;">
+
+<div style="background-image:url({{ relBase }}{{ post.image }}"></div>
+<div class="description">
+  <h2>{{ post.title }}</h2>
+  <p><strong>{% include forloop-dates.html %}</strong></p>
+  <p>{{ post.description }}</p>
+<p><a href="{{ relBase }}{{ post.url }}#play" class="button">🔊 Listen</a></p>
+</div>
+
+  
+</section>
+{% endif %}
+{% endfor %}

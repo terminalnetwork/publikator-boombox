@@ -1,0 +1,10 @@
+## add your social media links here to have them appear in the footer of each page! Remember kids: you have a 
+## website!! People should come to your website! This is your brand! Sending them to facebook means you are 
+## promoting facebook brand before yours! You should send people FROM social media to you, not the other way.
+## Icon is leverage from Fontawesome. Search here to find what key you need: https://fontawesome.com/
+- name: Mastodon
+  url: https://mastodon.art/@bandnameofthecentury
+  icon: fa-mastodon
+- name: Pixelfed
+  url: https://pixfed.com/
+  icon: fa-instagram

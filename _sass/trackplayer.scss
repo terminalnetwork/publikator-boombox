@@ -1,0 +1,116 @@
+
+#trackArt {
+  z-index: 5;
+  overflow-x: hidden;
+  flex: 1 1 50%;
+  min-width: 512px;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-size: 100%;
+  background: var(--bg-alt);
+  background: linear-gradient(180deg, var(--bg-alt) 0%, var(--accent1-alt) 180%);
+
+  > section {
+    position: absolute;
+    height: 100vh;
+    width: 50%;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    > * {
+      margin: 40px;
+    }
+
+  }
+  .coverartwrapper {
+
+    margin-top: 120px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+    width: 50%;
+    padding-top: 50%; /* 1:1 Aspect Ratio */
+    position: relative; /* If you want text inside of it */
+  }
+   .coverartwrapped {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 100%;
+    padding-bottom: 0;
+    background-size: cover;
+  }
+  .playbutton {
+    cursor: pointer;
+    justify-self: center;
+  }
+
+ }
+ #trackInfo {
+  flex: 1 1 50%;
+  z-index: 5;
+  height:100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  section {
+    padding: 20px;
+    background-color: var(--bg);
+    > * {
+      margin: 20px;
+    }
+    .info {
+      margin: 20px;
+      padding: 0;
+    }
+    p:first-child {
+      margin-top:80px;
+    }
+  }
+
+  .post-nav-next {
+    text-align: right;
+  }
+  .post-nav {
+    text-align: left;
+  }
+
+ }
+ .playerlogo {
+
+ }
+
+@media only screen and (max-width: 1023px) {
+  #trackArt {
+    z-index: 5;
+    min-width: 100%;
+    section {
+      position: absolute;
+      top: 0;
+      margin: 0;
+      width: 100%;
+      height: 80vh;
+    }
+  }
+ #trackInfo {
+  z-index: 5;
+    height: unset;
+    overflow-y: unset;
+    section {
+      p:first-child {
+        margin-top:20px;
+      }
+    }
+  }
+}
+
+.bouncer {
+  -webkit-animation: backgroundSize 10s ease infinite;
+  -moz-animation: backgroundSize 10s ease infinite;
+  animation: backgroundSize 10s ease infinite;
+}

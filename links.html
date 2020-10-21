@@ -1,0 +1,41 @@
+---
+title: Links
+description: >-
+  Venture outside of your daily web-routine, read about some real projects.
+  These links are way more than just Friends and Resources
+image: /images/pages/phone.jpg
+---
+
+{% include relBase.html %}
+{% include header.html %}
+
+{% assign sorted = site.data.links | sort: 'title' %}
+{% for post in sorted %}
+<section id="read" class="front-section">
+  <div style="background-image:url({{ post.image }})">
+    <p class="editor-link"><a href="cloudcannon:collections/_posts/{{ post.path }}" rel="nofollow"
+        class="btn"><strong>&#9998;</strong> Edit Post</a></p>
+  </div>
+  <div class="description">
+    <div class="container">
+      <div class="">
+        <h3>
+        {{ post.banner  }}
+      </h3>
+      </div>
+     
+      <div>
+        <p><a class="button" href="{{ post.url }}" rel="noopener" target="_blank">🔗 {{ post.title }}</a></p>
+      </div>
+  
+    </div>
+  </div>
+
+</section>
+
+{% endfor %}
+
+
+
+
+
